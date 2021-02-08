@@ -11,6 +11,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+    <!-- Authentication -->
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+
+        <x-dropdown-link :href="route('logout')"
+                         onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+            {{ __('Logout') }}
+        </x-dropdown-link>
+    </form>
     @yield('content')
 
 
